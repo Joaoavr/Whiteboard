@@ -1,4 +1,4 @@
-import { ReactFlow,Background, Controls, type Node, type NodeTypes, useEdgesState, type Connection, useNodesState,addEdge,ConnectionMode,type Edge, type EdgeTypes,} from '@xyflow/react';
+import { ReactFlow,MiniMap,Background, Controls, type Node, type NodeTypes, useEdgesState, type Connection, useNodesState,addEdge,ConnectionMode,type Edge, type EdgeTypes,} from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
 import * as Toolbar from '@radix-ui/react-toolbar';
@@ -66,15 +66,21 @@ function App() {
        }}
        >
         <Background  gap={12} size={1} color='#454545'/>
+        <MiniMap nodeColor={nodeColor} />
         <Controls />
       </ReactFlow>
-
       <Toolbar.Root className="fixed bottom-20 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-lg border border-zinc-300 px-8 h-20 w-96 overflow-hidden">
            <Toolbar.Button onClick={onAddNode}  className='w-32 h-32 bg-violet-500 mt-6 rounded transition-transform hover:-translate-y-2'/>
       </Toolbar.Root>
 
     </div>
   )
+}
+function nodeColor(node: Node) {
+  switch (node.type) {
+    default:
+      return '#8b5cf6';
+  }
 }
 
 export default App
