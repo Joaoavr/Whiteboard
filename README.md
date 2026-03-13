@@ -2,15 +2,17 @@
 Este é um  whiteboard personal simples e eficiente, desenvolvido para dispositivos utilizando a tecnologia React. O projeto permite que usuários gerenciem seus workflows de forma prática e rápida.
 
 ## Funcionalidades
-* Adicionar Nodes : Button para adicionar os nodes .
+* Adicionar Nodes : Botão dedicado para inserir novos blocos no quadro.
 
-* Resizer : selecione os nodes do tamanho que o usuario preferir.
+* Resizer : Ajuste o tamanho dos blocos conforme a necessidade.
 
-* Remoção : Exclua itens individualmente .
+* Remoção : Exclua itens e conexões individualmente de forma simples.
 
-* MiniMap : Mini mapa para a visualizacao do workflow para nao se perder.
+* MiniMap : Navegação facilitada através de um mini mapa para visualização de grandes fluxos.
 
-* Zoom in/Zoom out : Zoom para a melhor visualizacao dos nodes.
+* Zoom & Pan :Controle total de visualização com suporte a zoom in/out e movimentação livre pelo canvas.
+
+* Conexoes dinamicas : Ligue um bloco a outro para definir hierarquias ou processos.
 
 
 ### 📋 Pré-requisitos
@@ -27,12 +29,12 @@ Siga o passo a passo abaixo para configurar o ambiente de desenvolvimento:
 Clone o repositório:
 
 ```
-git clone https://github.com/Joaoavr/ReactNative.git
+git clone https://github.com/Joaoavr/Whiteboard.git
 ```
 Entre no diretório do projeto:
 
 ```
-cd ReactNative
+cd Whiteboard
 ```
 Instale as dependências:
 
@@ -45,7 +47,9 @@ yarn install
 Inicie o servidor de desenvolvimento:
 
 ```
-npx expo start
+npm run dev
+# ou
+yarn dev
 ```
 
 ### 📂 Estrutura de Pastas
@@ -53,24 +57,31 @@ npx expo start
 Abaixo está a organização dos diretórios do projeto:
 
 ```
-ReactNative/
-├── assets/           # Imagens, ícones e fontes locais
-├── src/              # Código fonte principal
-│   ├── components/   # Componentes reutilizáveis (Input, ListItem, etc.)
-│   ├── screens/      # Telas da aplicação (Home, Detalhes)
-│   ├── styles/       # Estilizações globais ou temas
-│   └── utils/        # Funções utilitárias e constantes
-├── App.js            # Arquivo de entrada principal
+whiteboard/
+├── public/           # Arquivos estáticos
+├── src/              # Código-fonte principal
+│   ├── components/   # Componentes da interface (Toolbar, Nodes customizados)
+│   ├── App.tsx       # Componente principal com a lógica do React Flow
+│   ├── main.tsx      # Ponto de entrada da aplicação
+│   └── index.css     # Estilizações globais com Tailwind
+├── UI-Figma-Jam/     # Arquivos de design e referências visuais
 ├── package.json      # Dependências e scripts do projeto
-└── README.md         # Documentação
+├── tailwind.config.js # Configurações do Tailwind CSS
+└── README.md         # Documentação do projeto
 ```
 
 ### 🛠️ Tecnologias Utilizadas
-* React 
+* React
+
+* Vite Framework
 
 * [React-Flow - Lib](https://reactflow.dev)
 
 * [JavaScript/TypeScript] - Linguagem utilizada
+
+* Tailwind CSS
+
+* Lucide React
 
 
 ## ✒️ Autores
